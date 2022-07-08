@@ -32,8 +32,8 @@ public class DemoManyToOneApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		addLoanAndCustomer();
-   //   getLoanDetails();	
+	//	addLoanAndCustomer();
+      getLoanDetails();	
 	//sanctionLoanToExistingCustomer();
    // closeLoan();
 	//	deleteLoan();
@@ -42,7 +42,7 @@ public class DemoManyToOneApplication implements CommandLineRunner {
 
 	public void getLoanDetails() {
 		try {
-			LoanDTO loanDTO=customerLoanService.getLoanDetails(4);
+			LoanDTO loanDTO=customerLoanService.getLoanDetails(2001);
 			LOGGER.info(loanDTO);
 		} catch (Exception e) {
 			String message = environment.getProperty(e.getMessage(),"Some exception occured. Please check log file for more details!!");

@@ -2,15 +2,17 @@ package com.infy.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="customerm2o")
+@Table
 public class Customer {
 
 	@Id
@@ -20,7 +22,6 @@ public class Customer {
 	private String emailId;
 	private String name;
 	private LocalDate dateOfBirth;
-
 	
 	public Integer getCustomerId() {
 		return customerId;
