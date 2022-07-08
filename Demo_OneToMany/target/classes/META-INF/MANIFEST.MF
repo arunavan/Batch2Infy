@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: USER
+Build-Jdk: 14.0.2
+Implementation-Title: Demo_OneToMany
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.infy
+Implementation-URL: https://spring.io/projects/spring-boot/Demo_OneToMan
+ y
+Created-By: Maven Integration for Eclipse
+
