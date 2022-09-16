@@ -9,10 +9,23 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Stack;
 import java.util.Vector;
-class Course123{
+class Course123 implements Comparable{ //to avoid duplicate etries override equals & hashCode
 	Integer id;
 	String name;
+	
+	public int compareTo(Object o) {
+		Course123 c1=(Course123)o;
+		
+		if(this.id>c1.id)
+			return 1;
+		else
+			if(this.id<c1.id) 
+				return -1;
+			else
+				return 0;
+	}
 	
 	@Override
 	public String toString() {
@@ -26,6 +39,38 @@ class Course123{
 	Course123() {
 		
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Course123 other = (Course123) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+	
+	
+	
 	
 }
 
@@ -33,10 +78,15 @@ public class ArrayListDemo {
 
 	public static void main(String[] args) {
 		
+		Stack s=new Stack();  //LIFO  ,FIFO
+		s.push(10);
+		s.pop();
+		s.empty();
+		s.isEmpty();
 		
 		
-		//Vector ll1= new Vector();
-		ArrayList<Integer> ll1=new ArrayList();
+		Vector ll1= new Vector();
+		//ArrayList<> ll1=new ArrayList();
 		//Arrays.asList(90,78,67);
 		ll1.add(20);
 		ll1.add(78);
